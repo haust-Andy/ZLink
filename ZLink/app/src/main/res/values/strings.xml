@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Zlink</string>
+    <string name="userName">用户名</string>
+    <string name="personalSignature">编辑个性签名，展示我的独特态度</string>
+</resources>

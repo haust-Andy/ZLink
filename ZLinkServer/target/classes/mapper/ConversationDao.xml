@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzy.dao.ConversationDao">
+  <resultMap id="BaseResultMap" type="com.zzy.pojo.entity.Conversation">
+    <id column="conversation_id" jdbcType="INTEGER" property="conversationId" />
+    <result column="account_number_1" jdbcType="VARCHAR" property="accountNumber1" />
+    <result column="account_name_1" jdbcType="VARCHAR" property="accountName1" />
+    <result column="account_number_2" jdbcType="VARCHAR" property="accountNumber2" />
+    <result column="account_name_2" jdbcType="VARCHAR" property="accountName2" />
+    <result column="last_message_id" jdbcType="INTEGER" property="lastMessageId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    conversation_id, account_number_1, account_name_1, account_number_2, account_name_2, 
+    last_message_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from conversation
+    where conversation_id = #{conversationId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUserNumber1" resultType="com.zzy.pojo.Bean.ConversationInfo">
+      select  account_name_1,account_number_1,account_name_2,account_number_2,content,post_time
+      from conversation,message_content
+      where conversation.account_number_1=#{accountNumber}
+        and conversation.last_message_id=message_content.message_id
+  </select>
+  <select id="selectByUserNumber2" resultType="com.zzy.pojo.Bean.CVSN">
+    select account_name_1,account_number_1, account_name_2,account_number_2,content,post_time
+    from conversation,message_content
+    where conversation.account_number_2=#{accountNumber}
+      and conversation.last_message_id=message_content.message_id
+  </select>
+    <select id="selectByAB" resultType="com.zzy.pojo.entity.Conversation">
+    select * from conversation
+        where (account_name_1=#{accountName1} and account_name_2=#{accountName2})
+            or(account_name_2=#{accountName1} and account_name_1=#{accountName2})
+    </select>
+    <select id="getId" resultType="java.lang.Integer">
+      select conversation_id
+        from conversation
+        where (account_name_1=#{name_a} and account_name_2= #{name_b})
+            or (account_name_2=#{name_a} and account_name_1= #{name_b})
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from conversation
+    where conversation_id = #{conversationId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="conversation_id" keyProperty="conversationId" parameterType="com.zzy.pojo.entity.Conversation" useGeneratedKeys="true">
+    insert into conversation (account_number_1, account_name_1, account_number_2, 
+      account_name_2, last_message_id)
+    values (#{accountNumber1,jdbcType=VARCHAR}, #{accountName1,jdbcType=VARCHAR}, #{accountNumber2,jdbcType=VARCHAR}, 
+      #{accountName2,jdbcType=VARCHAR}, #{lastMessageId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="conversation_id" keyProperty="conversationId" parameterType="com.zzy.pojo.entity.Conversation" useGeneratedKeys="true">
+    insert into conversation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="accountNumber1 != null">
+        account_number_1,
+      </if>
+      <if test="accountName1 != null">
+        account_name_1,
+      </if>
+      <if test="accountNumber2 != null">
+        account_number_2,
+      </if>
+      <if test="accountName2 != null">
+        account_name_2,
+      </if>
+      <if test="lastMessageId != null">
+        last_message_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="accountNumber1 != null">
+        #{accountNumber1,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName1 != null">
+        #{accountName1,jdbcType=VARCHAR},
+      </if>
+      <if test="accountNumber2 != null">
+        #{accountNumber2,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName2 != null">
+        #{accountName2,jdbcType=VARCHAR},
+      </if>
+      <if test="lastMessageId != null">
+        #{lastMessageId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.zzy.pojo.entity.Conversation">
+    update conversation
+    <set>
+      <if test="accountNumber1 != null">
+        account_number_1 = #{accountNumber1,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName1 != null">
+        account_name_1 = #{accountName1,jdbcType=VARCHAR},
+      </if>
+      <if test="accountNumber2 != null">
+        account_number_2 = #{accountNumber2,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName2 != null">
+        account_name_2 = #{accountName2,jdbcType=VARCHAR},
+      </if>
+      <if test="lastMessageId != null">
+        last_message_id = #{lastMessageId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where conversation_id = #{conversationId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zzy.pojo.entity.Conversation">
+    update conversation
+    set account_number_1 = #{accountNumber1,jdbcType=VARCHAR},
+      account_name_1 = #{accountName1,jdbcType=VARCHAR},
+      account_number_2 = #{accountNumber2,jdbcType=VARCHAR},
+      account_name_2 = #{accountName2,jdbcType=VARCHAR},
+      last_message_id = #{lastMessageId,jdbcType=INTEGER}
+    where conversation_id = #{conversationId,jdbcType=INTEGER}
+  </update>
+  <update id="updateMessageIdByPrimaryKey">
+    update conversation
+        set last_message_id=#{messageId}
+    where conversation_id = #{conversationId,jdbcType=INTEGER}
+  </update>
+</mapper>

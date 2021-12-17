@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PersistentConfig">
+    <option name="historyConfigList">
+      <map>
+        <entry key="chat_content">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="ChatContentDao" />
+              <option name="daoPackage" value="generator" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="daoTargetFolder" value="$PROJECT_DIR$/src/main/java/com/zzy/dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="ChatContent" />
+              <option name="modelPackage" value="generator" />
+              <option name="modelTargetFolder" value="$PROJECT_DIR$/src/main/java/com/zzy/model" />
+              <option name="mysql_8" value="true" />
+              <option name="name" value="chat_content" />
+              <option name="needToStringHashcodeEquals" value="true" />
+              <option name="offsetLimit" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="chat_content" />
+              <option name="useExample" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="generator" />
+              <option name="xmlTargetFolder" value="E:\Shortcut\Desktop\ZLinkServer\src\main\java\com\zzy\mapper" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="conversation">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="ConversationDao" />
+              <option name="daoPackage" value="generator" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="daoTargetFolder" value="$PROJECT_DIR$/src/main/java/com/zzy/dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Conversation" />
+              <option name="modelPackage" value="generator" />
+              <option name="modelTargetFolder" value="$PROJECT_DIR$/src/main/java/com/zzy/model" />
+              <option name="name" value="conversation" />
+              <option name="needToStringHashcodeEquals" value="true" />
+              <option name="offsetLimit" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="conversation" />
+              <option name="useExample" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="generator" />
+              <option name="xmlTargetFolder" value="E:\Shortcut\Desktop\ZLinkServer\src\main\java\com\zzy\mapper" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="user">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="UserDao" />
+              <option name="daoPackage" value="generator" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="daoTargetFolder" value="$PROJECT_DIR$/src/main/java/com/zzy/dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="User" />
+              <option name="modelPackage" value="generator" />
+              <option name="modelTargetFolder" value="$PROJECT_DIR$/src/main/java/com/zzy/model" />
+              <option name="mysql_8" value="true" />
+              <option name="name" value="user" />
+              <option name="needToStringHashcodeEquals" value="true" />
+              <option name="offsetLimit" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="user" />
+              <option name="useExample" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="generator" />
+              <option name="xmlTargetFolder" value="E:\Shortcut\Desktop\ZLinkServer\src\main\java\com\zzy\mapper" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="user_friend">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="UserFriendDao" />
+              <option name="daoPackage" value="generator" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="daoTargetFolder" value="$PROJECT_DIR$/src/main/java/com/zzy/dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="UserFriend" />
+              <option name="modelPackage" value="generator" />
+              <option name="modelTargetFolder" value="$PROJECT_DIR$/src/main/java/com/zzy/model" />
+              <option name="mysql_8" value="true" />
+              <option name="name" value="user_friend" />
+              <option name="needToStringHashcodeEquals" value="true" />
+              <option name="offsetLimit" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="user_friend" />
+              <option name="useExample" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="generator" />
+              <option name="xmlTargetFolder" value="E:\Shortcut\Desktop\ZLinkServer\src\main\java\com\zzy\mapper" />
+            </Config>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

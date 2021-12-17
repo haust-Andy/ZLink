@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzy.dao.UserFriendDao">
+  <resultMap id="BaseResultMap" type="com.zzy.pojo.entity.UserFriend">
+    <result column="account_id" jdbcType="INTEGER" property="accountId" />
+    <result column="friend_account_id" jdbcType="INTEGER" property="friendAccountId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.zzy.pojo.entity.UserFriend">
+    insert into user_friend (account_id, friend_account_id)
+    values (#{accountId,jdbcType=INTEGER}, #{friendAccountId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zzy.pojo.entity.UserFriend">
+    insert into user_friend
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="accountId != null">
+        account_id,
+      </if>
+      <if test="friendAccountId != null">
+        friend_account_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="accountId != null">
+        #{accountId,jdbcType=INTEGER},
+      </if>
+      <if test="friendAccountId != null">
+        #{friendAccountId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+    <select id="selectFriendByUserId" resultType="com.zzy.pojo.entity.User">
+      select user.account_id,account_number,account_name,account_password,account_email,account_head,account_token
+      from user,user_friend
+      where user_friend.account_id=#{accountId}
+        and user_friend.friend_account_id=user.account_id
+    </select>
+    <select id="selectUserFriend" resultType="com.zzy.pojo.entity.UserFriend">
+      select * from user_friend where account_id=#{accountId} and friend_account_id=#{friendAccountId}
+    </select>
+</mapper>

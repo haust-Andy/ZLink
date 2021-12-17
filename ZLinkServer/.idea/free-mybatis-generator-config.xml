@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PersistentConfig">
+    <option name="historyConfigList">
+      <map>
+        <entry key="chat_content">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="ChatContentDao" />
+              <option name="daoPackage" value="com.zzy.pojo.entity" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="ChatContent" />
+              <option name="modelPackage" value="com.zzy.pojo.entity" />
+              <option name="name" value="chat_content" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="chat_content" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources/mybatias/mapper" />
+              <option name="xmlPackage" value="generator" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="conversation">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="ConversationDao" />
+              <option name="daoPackage" value="com.zzy.pojo.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Conversation" />
+              <option name="modelPackage" value="com.zzy.pojo.entity" />
+              <option name="name" value="conversation" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="conversation_id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="conversation" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="mapper" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="message_content">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="MessageContentDao" />
+              <option name="daoPackage" value="generate" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="MessageContent" />
+              <option name="modelPackage" value="generate" />
+              <option name="name" value="message_content" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="message_id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="message_content" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="generator" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="user">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="UserDao" />
+              <option name="daoPackage" value="com.zzy.pojo.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="User" />
+              <option name="modelPackage" value="com.zzy.pojo.entity" />
+              <option name="name" value="user" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="account_id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="user" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="mapper" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="user_friend">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="UserFriendDao" />
+              <option name="daoPackage" value="com.zzy.pojo.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="UserFriend" />
+              <option name="modelPackage" value="com.zzy.pojo.entity" />
+              <option name="name" value="user_friend" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="user_friend" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="mapper" />
+            </Config>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

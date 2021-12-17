@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzy.dao.UserDao">
+  <resultMap id="BaseResultMap" type="com.zzy.pojo.entity.User">
+    <id column="account_id" jdbcType="INTEGER" property="accountId" />
+    <result column="account_number" jdbcType="VARCHAR" property="accountNumber" />
+    <result column="account_name" jdbcType="VARCHAR" property="accountName" />
+    <result column="account_password" jdbcType="VARCHAR" property="accountPassword" />
+    <result column="account_email" jdbcType="VARCHAR" property="accountEmail" />
+    <result column="account_token" jdbcType="VARCHAR" property="accountToken" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zzy.pojo.entity.User">
+    <result column="account_head" jdbcType="BLOB" property="accountHead" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    account_id, account_number, account_name, account_password, account_email, account_token
+  </sql>
+  <sql id="Blob_Column_List">
+    account_head
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from user
+    where account_id = #{accountId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByAccountNumber" resultType="com.zzy.pojo.entity.User">
+    select * from user where account_number=#{accountNumber}
+  </select>
+  <select id="selectByToken" resultType="com.zzy.pojo.entity.User">
+    select * from user where account_token=#{token}
+  </select>
+    <select id="selectByName" resultType="com.zzy.pojo.entity.User">
+      select * from user where account_name=#{userName}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where account_id = #{accountId,jdbcType=INTEGER}
+  </delete>
+  <update id="delTokenByAccountNumber">
+    update user set account_token='' where account_number=#{accountNumber};
+  </update>
+  <insert id="insert" keyColumn="account_id" keyProperty="accountId" parameterType="com.zzy.pojo.entity.User" useGeneratedKeys="true">
+    insert into user (account_number, account_name, account_password, 
+      account_email, account_token, account_head
+      )
+    values (#{accountNumber,jdbcType=VARCHAR}, #{accountName,jdbcType=VARCHAR}, #{accountPassword,jdbcType=VARCHAR}, 
+      #{accountEmail,jdbcType=VARCHAR}, #{accountToken,jdbcType=VARCHAR}, #{accountHead,jdbcType=BLOB}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="account_id" keyProperty="accountId" parameterType="com.zzy.pojo.entity.User" useGeneratedKeys="true">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="accountNumber != null">
+        account_number,
+      </if>
+      <if test="accountName != null">
+        account_name,
+      </if>
+      <if test="accountPassword != null">
+        account_password,
+      </if>
+      <if test="accountEmail != null">
+        account_email,
+      </if>
+      <if test="accountToken != null">
+        account_token,
+      </if>
+      <if test="accountHead != null">
+        account_head,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="accountNumber != null">
+        #{accountNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName != null">
+        #{accountName,jdbcType=VARCHAR},
+      </if>
+      <if test="accountPassword != null">
+        #{accountPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="accountEmail != null">
+        #{accountEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="accountToken != null">
+        #{accountToken,jdbcType=VARCHAR},
+      </if>
+      <if test="accountHead != null">
+        #{accountHead,jdbcType=BLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zzy.pojo.entity.User">
+    update user
+    <set>
+      <if test="accountNumber != null">
+        account_number = #{accountNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName != null">
+        account_name = #{accountName,jdbcType=VARCHAR},
+      </if>
+      <if test="accountPassword != null">
+        account_password = #{accountPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="accountEmail != null">
+        account_email = #{accountEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="accountToken != null">
+        account_token = #{accountToken,jdbcType=VARCHAR},
+      </if>
+      <if test="accountHead != null">
+        account_head = #{accountHead,jdbcType=BLOB},
+      </if>
+    </set>
+    where account_id = #{accountId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zzy.pojo.entity.User">
+    update user
+    set account_number = #{accountNumber,jdbcType=VARCHAR},
+      account_name = #{accountName,jdbcType=VARCHAR},
+      account_password = #{accountPassword,jdbcType=VARCHAR},
+      account_email = #{accountEmail,jdbcType=VARCHAR},
+      account_token = #{accountToken,jdbcType=VARCHAR},
+      account_head = #{accountHead,jdbcType=BLOB}
+    where account_id = #{accountId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zzy.pojo.entity.User">
+    update user
+    set account_number = #{accountNumber,jdbcType=VARCHAR},
+      account_name = #{accountName,jdbcType=VARCHAR},
+      account_email = #{accountEmail,jdbcType=VARCHAR},
+      account_token = #{accountToken,jdbcType=VARCHAR}
+    where account_id = #{accountId,jdbcType=INTEGER}
+  </update>
+  <update id="setToken"  parameterType="com.zzy.pojo.entity.User">
+    update user set account_token=#{accountToken} where account_number= #{accountNumber}
+  </update>
+</mapper>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzy.dao.MessageContentDao">
+  <resultMap id="BaseResultMap" type="com.zzy.pojo.entity.MessageContent">
+    <id column="message_id" jdbcType="INTEGER" property="messageId" />
+    <result column="conversation_id" jdbcType="INTEGER" property="conversationId" />
+    <result column="account_name" jdbcType="VARCHAR" property="accountName" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="post_time" jdbcType="TIMESTAMP" property="postTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    message_id, conversation_id, account_id, content, post_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from message_content
+    where message_id = #{messageId,jdbcType=INTEGER}
+  </select>
+    <select id="selectIdByOther" resultType="java.lang.Integer">
+      select message_id
+        from message_content
+        where conversation_id=#{conversationId}
+            and post_time=#{postTime}
+    </select>
+    <select id="selectByCvsnId" resultType="com.zzy.pojo.entity.MessageContent">
+      select * from message_content where conversation_id= #{cvsnId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from message_content
+    where message_id = #{messageId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="message_id" keyProperty="messageId" parameterType="com.zzy.pojo.entity.MessageContent" useGeneratedKeys="true">
+    insert into message_content (conversation_id, account_name, content,
+      post_time)
+    values (#{conversationId,jdbcType=INTEGER}, #{accountName,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR},
+      #{postTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="message_id" keyProperty="messageId" parameterType="com.zzy.pojo.entity.MessageContent" useGeneratedKeys="true">
+    insert into message_content
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="conversationId != null">
+        conversation_id,
+      </if>
+      <if test="accountId != null">
+        account_id,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="postTime != null">
+        post_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="conversationId != null">
+        #{conversationId,jdbcType=INTEGER},
+      </if>
+      <if test="accountId != null">
+        #{accountId,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="postTime != null">
+        #{postTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zzy.pojo.entity.MessageContent">
+    update message_content
+    <set>
+      <if test="conversationId != null">
+        conversation_id = #{conversationId,jdbcType=INTEGER},
+      </if>
+      <if test="accountId != null">
+        account_id = #{accountId,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="postTime != null">
+        post_time = #{postTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where message_id = #{messageId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zzy.pojo.entity.MessageContent">
+    update message_content
+    set conversation_id = #{conversationId,jdbcType=INTEGER},
+      account_id = #{accountId,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR},
+      post_time = #{postTime,jdbcType=TIMESTAMP}
+    where message_id = #{messageId,jdbcType=INTEGER}
+  </update>
+</mapper>

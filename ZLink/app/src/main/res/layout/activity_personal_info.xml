@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+
+        android:id="@+id/top_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/shape">
+
+        <ImageView
+            android:id="@+id/head_img"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_head" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@+id/close_btn"
+            android:layout_toEndOf="@+id/head_img"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="left"
+                android:text="@string/userName"
+                android:textSize="20sp"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/personalSignature" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_close2" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_liner"
+        android:layout_below="@+id/top_bar_rl"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/edit_info_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_person_info" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="编辑资料"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_input" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_space" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="我的空间"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_input" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_collection" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="我的收藏"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_input" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_file" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="我的文件"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_input" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_album" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="我的相册"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_input" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_liner"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_setting" />
+
+            <TextView
+                android:layout_width="75sp"
+                android:layout_height="25sp"
+                android:gravity="center"
+                android:text="设置" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_weather" />
+
+            <TextView
+                android:layout_width="75sp"
+                android:layout_height="25sp"
+                android:gravity="center"
+                android:text="天气" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:id="@+id/change_account_liner"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_switch_account" />
+
+            <TextView
+                android:layout_width="75sp"
+                android:layout_height="25sp"
+                android:gravity="center"
+                android:text="切换账号" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/exit_login_liner"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_exit" />
+
+            <TextView
+
+                android:layout_width="75sp"
+                android:layout_height="25sp"
+                android:gravity="center"
+                android:text="退出登录" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
